@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITS Pilani Merchandise Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:url('https://static.vecteezy.com/system/resources/previews/044/151/311/non_2x/abstract-smooth-blue-with-black-vignette-studio-free-photo.jpg')no-repeat center center;
+            background-size:cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background:url('https://static.vecteezy.com/system/resources/thumbnails/021/599/818/small/blue-spotlight-modern-background-image-free-photo.jpg')no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            color: black;
+        }
+        label {
+            font-weight: bold;
+            color: #ddd;
+        }
+        input::placeholder {
+    font-weight: bold;
+    color: #ccc;  
+}
+    
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ebe6ea;
+            border-radius: 4px;
+            background: #0d0d0d;
+            color: white;
+        }
+        .error {
+            color: rgb(237, 10, 10);
+            font-size: 12px;
+        }
+        button[type="submit"] {
+    background-color: rgb(0, 97, 224); /* Blue */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(38, 200, 17); 
+}
+
+button[type="reset"] {
+    background-color: rgb(200, 0, 0); 
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button[type="reset"]:hover {
+    background-color: rgb(191, 16, 16); 
+}
+
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; 
+        }
+
+
+.button-group button {
+    flex: 1; 
+}
+.form-group input[type="checkbox"] {
+    width: 16px; 
+    height: 16px; 
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+
+
+.radio-group {
+    display: flex;
+    gap: 35px; 
+    flex-wrap: wrap; 
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="radio"] {
+    width: 15px;
+    height: 15px;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Merchandise Registration Form</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your BITS Email ID" required>
+                <span class="error" id="emailError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="bitsID">BITS ID:</label>
+                <input type="text" id="bitsID" name="bitsID" placeholder="Enter your BITS ID" required>
+                <span class="error" id="bitsIDError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="hostel">Hostel:</label>
+                <select id="hostel" name="hostel">
+                    <option value="">Select your hostel</option>
+                    <option value="Srinivas Ramanujan(SR)">Srinivas Ramanujan(SR)</option>
+                    <option value="krishna">krishna</option>
+                    <option value="Budh">Budh</option>
+                    <option value="Malviya">Malviya</option>
+                    <option value="Bhagirath">Bhagirath</option>
+                    <option value="Shankar">Shankar</option>
+                    <option value="Vyas">Vyas</option>
+                    <option value="Ram">Ram</option>
+                    <option value="Gandhi">Gandhi</option>
+                    <option value="Viswa Karma">Viswa Karma</option>
+                    <option value="Ashok">Ashok</option>
+                    <option value="Ranapratap">Ranapratap</option>
+                    <option value="CVR">CVR</option>
+                    <option value="Meera">Meera</option>
+                </select>
+                <span class="error" id="hostelError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label>Size:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="sizeS" name="size" value="S">
+                        <label for="sizeS">S</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sizeM" name="size" value="M">
+                        <label for="sizeM">M</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sizeL" name="size" value="L">
+                        <label for="sizeL">L</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sizeXL" name="size" value="XL">
+                        <label for="sizeXL">XL</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sizeXXL" name="size" value="XXL">
+                        <label for="sizeXXL">XXL</label>
+                    </div>
+                </div>
+                <span class="error" id="sizeError"></span>
+            </div>
+            
+            
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms"> 
+                <label for="terms">I agree to the terms and conditions</label>
+                <span class="error" id="termsError"></span>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="button-group">
+                <button type="reset">Reset</button>
+            </div>
+            
+        </form>
+    </div>
+    <script>
+      document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    let isValid = true;  // Track overall validation status
+
+    let name = document.getElementById("name").value;
+    let nameError = document.getElementById("nameError");
+    if (name.length < 5 || name.length > 50) {
+        nameError.textContent = "Name must be between 5 and 50 characters.";
+        isValid = false;
+    } else {
+        nameError.textContent = "";
+    }
+
+    let phone = document.getElementById("phone").value;
+    let phoneError = document.getElementById("phoneError");
+    let phonePattern = /^[6-9][0-9]{9}$/;
+    if (!phonePattern.test(phone)) {
+        phoneError.textContent = "Enter a valid 10-digit phone number.";
+        isValid = false;
+    } else {
+        phoneError.textContent = "";
+    }
+
+    let email = document.getElementById("email").value;
+    let emailError = document.getElementById("emailError");
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@pilani\.bits-pilani\.ac\.in$/;
+    if (!emailPattern.test(email)) {
+        emailError.textContent = "Invalid BITS Pilani email format.";
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+    }
+
+    let bitsID = document.getElementById("bitsID").value;
+    let bitsIDError = document.getElementById("bitsIDError");
+    let bitsIDPattern = /^[0-9]{4}[A-Z]{1,2}[0-9]?[A-Z]{2}[0-9]{4}P$/;
+    if (!bitsIDPattern.test(bitsID)) {
+        bitsIDError.textContent = "Invalid BITS ID format. Example: 2024XXPS0002P";
+        isValid = false;
+    } else {
+        bitsIDError.textContent = "";
+    }
+
+    let hostel = document.getElementById("hostel").value;
+    let hostelError = document.getElementById("hostelError");
+    if (hostel === "") {
+        hostelError.textContent = "Please select your hostel.";
+        isValid = false;
+    } else {
+        hostelError.textContent = "";
+    }
+
+    let sizeSelected = document.querySelector('input[name="size"]:checked');
+    let sizeError = document.getElementById("sizeError");
+    if (!sizeSelected) {
+        sizeError.textContent = "Please select a size.";
+        isValid = false;
+    } else {
+        sizeError.textContent = "";
+    }
+
+    let termsChecked = document.getElementById("terms").checked;
+    let termsError = document.getElementById("termsError");
+    if (!termsChecked) {
+        termsError.textContent = "You must agree to the terms.";
+        isValid = false;
+    } else {
+        termsError.textContent = "";
+    }
+
+    let storedData = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+    if (storedData.some(user => user.bitsID === bitsID || user.email === email)) {
+        alert("You have already submitted the form!");
+        event.preventDefault();
+        return;
+    }
+
+    if (!isValid) {
+        event.preventDefault(); // Prevent form submission if any validation fails
+    } else {
+        // Save the data if all fields are valid
+        storedData.push({ name, email, phone, bitsID, hostel, size: sizeSelected.value });
+        localStorage.setItem("registeredUsers", JSON.stringify(storedData));
+    }
+});
+    </script>
+</body>
+</html>
