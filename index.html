@@ -56,7 +56,7 @@
             font-size: 12px;
         }
         button[type="submit"] {
-    background-color: rgb(0, 97, 224); /* Blue */
+    background-color: rgb(0, 97, 224); 
     color: white;
     font-weight: bold;
     border: none;
@@ -227,7 +227,7 @@ input[type="radio"] {
     </div>
     <script>
       document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    let isValid = true;  // Track overall validation status
+    let isValid = true;  
 
     let name = document.getElementById("name").value;
     let nameError = document.getElementById("nameError");
@@ -303,12 +303,25 @@ input[type="radio"] {
     }
 
     if (!isValid) {
-        event.preventDefault(); // Prevent form submission if any validation fails
-    } else {
-        // Save the data if all fields are valid
-        storedData.push({ name, email, phone, bitsID, hostel, size: sizeSelected.value });
-        localStorage.setItem("registeredUsers", JSON.stringify(storedData));
-    }
+    event.preventDefault(); 
+} else {
+    storedData.push({ name, email, phone, bitsID, hostel, size: sizeSelected.value });
+    localStorage.setItem("registeredUsers", JSON.stringify(storedData));
+    let successMessage = document.createElement("div");
+    successMessage.textContent = " Information has been submitted successfully!";
+    successMessage.style.color = "green";
+    successMessage.style.fontWeight = "bold";
+    successMessage.style.textAlign = "center";
+    successMessage.style.marginTop = "10px";
+
+    document.getElementById("registrationForm").appendChild(successMessage);
+    setTimeout(() => {
+        document.getElementById("registrationForm").reset();
+        successMessage.remove(); 
+    }, 3000);
+
+    event.preventDefault();
+}   
 });
     </script>
 </body>
